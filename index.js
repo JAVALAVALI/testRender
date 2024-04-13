@@ -17,4 +17,9 @@ app.get('/', async (req, res) => {
     await db.insert({ ip, date })
 })
 
+app.get('/read', async (req, res) => {
+    let data = await db.find({})
+    res.json(data)
+})
+
 app.listen(port, console.log(`Server on port ${port}`))
