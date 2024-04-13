@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
     res.send('<h1>Hola Kiro</h1>')
     let date = new Date()
     let ip = req.ip
-    db.insert({ ip, date })
+    await db.insert({ ip, date })
 })
 
 app.listen(port, console.log(`Server on port ${port}`))
