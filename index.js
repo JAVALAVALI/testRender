@@ -2,8 +2,8 @@ const express = require('express')
 const nedb = require('nedb-promises')
 const app = express()
 
-let db = nedb.create('db')
-db.load('dbs.db').then(() => {
+let db = nedb.create('dbs.db')
+db.load().then(() => {
     console.log("Data base cool");
 })
 
